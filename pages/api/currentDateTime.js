@@ -9,6 +9,7 @@ export default function handler(req, res) {
     year: now.getFullYear(),
     month: now.getMonth() + 1, // javascript month starts from 0
     day: now.getDate(),
+    hour: now.getHours(),
     minute: now.getMinutes(),
     seconds: now.getSeconds(),
     milliSeconds: now.getMilliseconds(),
@@ -16,6 +17,7 @@ export default function handler(req, res) {
     date: now.toLocaleDateString(),
     time: now.toLocaleTimeString(),
     dayOfWeek: now.getDay(),
+    unix: Math.floor(now / 1000),
   };
 
   res.status(200).json(data);
